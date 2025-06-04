@@ -1,0 +1,5 @@
+1. Do not invent code. Implement **exactly** what the prompt asks; if something is ambiguous, stop and ask.
+2. Never delete existing functionality unless explicitly instructed.
+3. Use React + Vite conventions, Tailwind classes, and lucide-react icons.
+4. All new routes must be registered in router.tsx and wrapped in <ProtectedRoute> when needed.
+5. For database work, generate raw SQL for Supabase; do **not** touch Prisma or any other ORM.
