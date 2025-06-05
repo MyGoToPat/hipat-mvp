@@ -1,4 +1,6 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 const avatarGlow = {
   width: 200,
@@ -103,12 +105,15 @@ function ChatInputBar() {
   );
 }
 
-export default function App() {
+interface AppProps { children?: ReactNode }
+
+export default function App({ children }: AppProps) {
   return (
     <div style={{
       minHeight: "100vh", background: "#000", color: "#fff", fontFamily: "sans-serif",
       display: "flex", flexDirection: "column", alignItems: "center", position: "relative"
     }}>
+      <HamburgerMenu />
       <PatAvatar />
       <QuickActions />
       <div style={{
@@ -120,6 +125,7 @@ export default function App() {
         }}>
           HOME CONTENT TEST
         </h1>
+        {children || <Outlet />}
       </div>
       <ChatInputBar />
     </div>

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
+import App from './App';
 import { AdminPanel } from './components/Admin/AdminPanel';
 import { FeedbackButton } from './components/Feedback';
 import Home from './pages/Home';
@@ -31,9 +32,9 @@ export const router = createBrowserRouter([
     path: '/',
     element: (
       <ProtectedRoute>
-        <MainLayout>
+        <App>
           <Home />
-        </MainLayout>
+        </App>
       </ProtectedRoute>
     ),
   },
@@ -71,10 +72,9 @@ export const router = createBrowserRouter([
     path: '/dashboard',
     element: (
       <ProtectedRoute>
-        <MainLayout>
+        <App>
           <Dashboard />
-          <FeedbackFab />
-        </MainLayout>
+        </App>
       </ProtectedRoute>
     ),
   },
